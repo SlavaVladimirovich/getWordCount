@@ -5,9 +5,7 @@ function getWordCount(text, ...words) {
   switch (words.length) {
     case 0:
       wordsArray.forEach(word => {
-        if (result.hasOwnProperty([word])) {
-          return;
-        } else {
+        if (!result.hasOwnProperty([word])) {
           result[word] = getExactWordCount(wordsArray, word)
         }
       });
